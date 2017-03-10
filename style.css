@@ -1,0 +1,11 @@
+.square {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  margin: 5px;
+  display: inline-block;
+}
+
+.highlight {
+  background-color: red;
+}
