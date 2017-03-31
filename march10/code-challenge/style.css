@@ -1,0 +1,11 @@
+html body {
+  margin: 0;
+  padding: 0;
+  text-align:center;
+}
+div {
+  background-color: red;
+  height: 100px;
+  max-width: 500px;
+  margin: 0 auto;
+}
