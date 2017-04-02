@@ -11,7 +11,7 @@ module.exports = function(grunt){
       }
     },
     copy: {
-      main: {
+      jquery: {
 
         expand: true,
         cwd: 'node_modules/jquery/dist/',
@@ -30,23 +30,37 @@ module.exports = function(grunt){
       bootstrap: {
 
         expand: true,
-        cwd: 'node_modules/bootstrap/dist/css/',
-        src: 'bootstrap.css',
-        dest: 'server/public/css/'
+        cwd: 'node_modules/bootstrap/dist/',
+        src: ['css/bootstrap.css', 'js/bootstrap.js'],
+        dest: 'server/public/vendors/'
 
       },
+      css: {
+
+        expand: true,
+        cwd: 'client/css/',
+        src: '*.css',
+        dest: 'server/public/css/'
+
+      }
     },
     watch: {
 
       options: {
         livereload: true,
       },
-      
-      files: ['client/scripts/*.js', 'client/*.html', 'client/css/*.css'],
+
+      files: ['client/*.html', 'client/css/*.css'],
       tasks: ['uglify', 'copy'],
 
       }
 
   });
+
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('default', ['uglify', 'copy', 'watch' ]);
 
 };

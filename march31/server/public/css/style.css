@@ -1,0 +1,21 @@
+body {
+
+}
+
+.properties {
+
+  padding: 5px;
+  margin:3px;
+  max-width: 250px;
+  background-color: darksalmon;
+  border-radius: 5px;
+
+}
+
+.panel-group {
+
+}
+
+modal {
+  z-index: -10;
+}
