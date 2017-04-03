@@ -134,7 +134,7 @@ function appendRentals(rentals){
 
       $('.rentalProperties').append(
         '<div class="col-md-3 col-sm-4 col-xs-6 properties">' +
-          '<p>' + dynamicDescription() + '</p>' +
+          '<p><b>' + dynamicDescription() + '</b></p>' +
           '<div class="panel-group">' +
             '<div class="panel panel-primary">' +
               '<div class="panel-heading panel-heading-sm">City:</div>' +

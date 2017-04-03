@@ -16,6 +16,9 @@ h1 {
   /*height: 200px;*/
 }
 
+.btn-default {
+    background-color: rgba(255, 255, 255, 0.4);
+}
 
 .content {
   position: relative;
@@ -27,7 +30,7 @@ h1 {
   padding: 5px;
   margin:3px;
   max-width: 250px;
-  background-color: rgba(168, 216, 242, 0.71);
+  background-color: rgba(255, 255, 255, 0.65);
   border-radius: 5px;
   min-height: 380px;
 
