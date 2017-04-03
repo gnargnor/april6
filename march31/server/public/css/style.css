@@ -3,13 +3,20 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
-
-
+  background-size: cover;
+  z-index: -1;
+  /*color: white;*/
 
 }
 
 .header {
-  position: fixed;
+  /*height: 200px;*/
+}
+
+
+.content {
+  position: relative;
+  /*top: 200px;*/
 }
 
 .properties {
@@ -17,7 +24,7 @@ body {
   padding: 5px;
   margin:3px;
   max-width: 250px;
-  background-color: ;
+  background-color: rgba(168, 216, 242, 0.71);
   border-radius: 5px;
 
 }

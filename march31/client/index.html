@@ -15,26 +15,32 @@
     <div class="container header">
 
 
-    <div class="container">
-      <h1> Bizzey Real Estate </h1>
+      <div class="container">
+        <h1> Bizzey Real Estate </h1>
+
+      </div>
+
+      <div class="container addButtons">
+        <button type="button" class="btn btn-primary toggleModal" data-toggle="modal" data-target="#addRealEstateModal" data-realEstateType="rental">Add Rental Property</button>
+        <button type="button" class="btn btn-primary toggleModal" data-toggle="modal" data-target="#addRealEstateModal" data-realEstateType="forSale">Add Seller Listing</button>
+      </div>
+
+
+
+      </div>
 
     </div>
 
-    <div class="container addButtons">
-      <button type="button" class="btn btn-primary toggleModal" data-toggle="modal" data-target="#addRealEstateModal" data-realEstateType="rental">Add Rental Property</button>
-      <button type="button" class="btn btn-primary toggleModal" data-toggle="modal" data-target="#addRealEstateModal" data-realEstateType="forSale">Add Seller Listing</button>
-    </div>
+    <div class="container content">
 
-  </div>
-
-    <div class="modal fade" id="#addRealEstateModal" tabindex="-1" role="dialog" >
+    <div class="modal fade" id="addRealEstateModal" tabindex="-1" role="dialog" >
       <div class="modal-dialog" role="document">
         <div class="modal-content">
 
           <div class="modal-header">
-            <div class="modal-title" id="typeOfRealEstate">
-              Add Real Estate
-            <button type="button" class="close" data-dismiss="modal"></button>
+            <div class="modal-title">
+              <span id="typeOfRealEstate">Add Real Estate</span>
+            <button type="button" class="close" data-dismiss="modal">X</button>
             </div>
           </div>
 
@@ -68,7 +74,7 @@
 
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary btn-sm" >Submit</button>
+              <button type="button" class="btn btn-primary btn-sm" id="submitProperty" >Submit</button>
           </div>
 
         </div>
@@ -101,6 +107,8 @@
       <div class="rentalProperties">
       </div>
     </div>
+
+  </div>
 
 
 

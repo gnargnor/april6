@@ -37,28 +37,34 @@ function postRealEstate(data){
 function addEventListeners(){
   console.log('addeventlisteners');
   //event listener for modal popup buttons
-  $('.addButtons').on('click', '.toggleModal', function(){
-    console.log('add button clicked ', $(this).text());
-    $('.modal').modal('toggle');
-  });
+  // $('.addButtons').on('click', '.toggleModal', function(){
+  //   console.log('add button clicked ', $(this).text());
+  //   $('.modal').modal('show');
+  // });
   //end add real estate button listeners
 
   //modal display options
-  $('#addRealEstateModal').on('show.bs.modal', function (event) {
+  $('#addRealEstateModal').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget);
-    var realEstateType = button.data('realEstateType');
+    console.log(button.data('realestatetype'));
+    var realEstateType = button.data('realestatetype');
     var modal = $(this);
+    console.log(realEstateType);
 
     if (realEstateType === 'rental'){
-      modal.find('.modal-title').text('Rental Property Listing Details');
+      modal.find('#typeOfRealEstate').text('Rental Property Listing Details');
       modal.find('.modal-body input').val(realEstateType);
     } else {
-      modal.find('.modal-title').text('Seller Listing Details');
+      modal.find('#typeOfRealEstate').text('Seller Listing Details');
       modal.find('.modal-body input').val(realEstateType);
     }
 
   });
   //end modal display options
+
+  $('.modal-content').on('click', '#submitProperty', function(){
+    console.log($('#addCity').val() + ' ' + $('#addSqFt').val() + ' ' + $('#addPrice').val());
+  });
 }
 //end event listeners
 
@@ -72,6 +78,7 @@ function appendForSale(forSale){
       $('.forSaleProperties').append(
       // $('#forSaleProperties').children().last().append(
         '<div class="col-md-3 col-sm-4 col-xs-6 properties">' +
+        '<p>' + dynamicDescription() + '</p>' +
           '<div class="panel-group">' +
             '<div class="panel panel-primary">' +
               '<div class="panel-heading panel-heading-sm">Cost:</div>' +
@@ -105,6 +112,7 @@ function appendRentals(rentals){
 
       $('.rentalProperties').append(
         '<div class="col-md-3 col-sm-4 col-xs-6 properties">' +
+          '<p>' + dynamicDescription() + '</p>' +
           '<div class="panel-group">' +
             '<div class="panel panel-primary">' +
               '<div class="panel-heading panel-heading-sm">Rent:</div>' +
@@ -127,4 +135,14 @@ function appendRentals(rentals){
     $('.test').append('row</div><div class="row">');
 
     }
+  }
+
+
+
+  function dynamicDescription(){
+    var descAdjective = ["Shiny","Churchy","Robust","Stinky","Dilapitated","Musky","Majestic","Newish","Antique","Grandiose","Gentle","Humble","Dirty","Possessed","Tarnished","Haunted","Quaint","Sketchy","Technically Habitable"];
+    var descNoun = ["Abode","Rambler","Double Wide","Mansion","Dwelling","Home","Apartment","Tent","Grow House","Tiny Home","Cabana","Hut","Hideout","House Boat","Unit","Living Space","Trap House","Cottage","Lodging","Squat"];
+    var luckyNumberA = Math.floor(Math.random() * descAdjective.length);
+    var luckyNumberN = Math.floor(Math.random() * descNoun.length);
+    return(descAdjective[luckyNumberA] + ' ' + descNoun[luckyNumberN]);
   }
