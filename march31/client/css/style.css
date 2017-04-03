@@ -30,6 +30,10 @@ h1 {
   font-size: 25px;
 }
 
+.text-center:hover {
+  color: blue;
+}
+
 .properties {
 
   padding: 5px;

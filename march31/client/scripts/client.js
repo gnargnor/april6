@@ -100,7 +100,7 @@ function appendForSale(forSale){
       $('.forSaleProperties').append(
       // $('#forSaleProperties').children().last().append(
         '<div class="col-md-3 col-sm-4 col-xs-6 properties">' +
-        '<p><b>' + dynamicDescription() + '</b></p>' +
+        '<p><span class="glyphicon glyphicon-home"></span>  ' + dynamicDescription() + '</p>' +
           '<div class="panel-group">' +
             '<div class="panel panel-primary">' +
               '<div class="panel-heading panel-heading-sm">City:</div>' +
@@ -135,19 +135,19 @@ function appendRentals(rentals){
 
       $('.rentalProperties').append(
         '<div class="col-md-3 col-sm-4 col-xs-6 properties">' +
-          '<p><b>' + dynamicDescription() + '</b></p>' +
+          '<p><span class="glyphicon glyphicon-home"></span>  ' + dynamicDescription() + '</p>' +
           '<div class="panel-group">' +
             '<div class="panel panel-primary">' +
               '<div class="panel-heading panel-heading-sm">City:</div>' +
-              '<div class="panel-body panel-body-sm">' + currentProp.city + '</div>' +
+              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-map-marker"></span>  ' + currentProp.city + '</div>' +
             '</div>' +
             '<div class="panel panel-success">' +
               '<div class="panel-heading panel-heading-sm">Size:</div>' +
-              '<div class="panel-body panel-body-sm">' + currentProp.sqft + ' SqFt</div>' +
+              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-info-sign">  ' + currentProp.sqft + ' SqFt</div>' +
             '</div>' +
             '<div class="panel panel-info">' +
               '<div class="panel-heading panel-heading-sm">Rent:</div>' +
-              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-usd"></span>' + currentProp.rent + '</div>' +
+              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-usd"></span>  ' + currentProp.rent + '</div>' +
             '</div>' +
           '</div>' +
           '<p class="text-center">LEARN MORE</p>' +
