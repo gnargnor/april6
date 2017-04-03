@@ -9,6 +9,9 @@ body {
 
 }
 
+h1 {
+  font-size: 75px;
+}
 .header {
   /*height: 200px;*/
 }
@@ -26,11 +29,12 @@ body {
   max-width: 250px;
   background-color: rgba(168, 216, 242, 0.71);
   border-radius: 5px;
+  min-height: 380px;
 
 }
 
-.panel-group {
-
+.hidden {
+  visibility: collapse;
 }
 
 modal {

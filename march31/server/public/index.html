@@ -23,6 +23,8 @@
       <div class="container addButtons">
         <button type="button" class="btn btn-primary toggleModal" data-toggle="modal" data-target="#addRealEstateModal" data-realEstateType="rental">Add Rental Property</button>
         <button type="button" class="btn btn-primary toggleModal" data-toggle="modal" data-target="#addRealEstateModal" data-realEstateType="forSale">Add Seller Listing</button>
+        <button type="button" class="btn btn-primary" id="toggleForSale">Show/Hide Seller Listings</button>
+        <button type="button" class="btn btn-primary" id="toggleRentals">Show/Hide Renal Listings</button>
       </div>
 
 
@@ -58,53 +60,27 @@
                 <label for="addPrice" class="form-control-label">Price:</label>
                 <textarea class="form-control" rows="1" id="addPrice"></textarea>
               </div>
-              <!-- <div class="form-group" id="addImage">
-                <label>Upload Image</label>
-                <div class="input-group">
-                  <span class="input-group-btn">
-                      <span class="btn btn-default btn-file">
-                          Browse… <input type="file" id="imgInp">
-                      </span>
-                  </span>
-                  <input type="text" class="form-control" readonly>
-                </div>
-              </div> -->
             </form>
           </div>
 
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary btn-sm" id="submitProperty" >Submit</button>
+              <button type="button" class="btn btn-primary btn-sm" id="submitProperty" data-dismiss="modal">Submit</button>
           </div>
 
         </div>
       </div>
     </div>
 
-
-      <!-- <div class="container" id="#forSaleProperties">
-        <div class="row">
-          <h3>For Sale:</h3>
-        </div>
-        <div class="row listings" >
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <h3>For Rent:</h3>
-        </div>
-        <div class="container listings" id="#rentalProperties">
-        </div>
-      </div> -->
     </div>
     <div class="container">
-      <h3>For Sale</h3>
       <div class="forSaleProperties">
+        <h3>Properties For Sale: </h3>
       </div>
     </div>
     <div class="container">
-      <h3>For Rent</h3>
       <div class="rentalProperties">
+        <h3>Properties For Rent: </h3>
       </div>
     </div>
 

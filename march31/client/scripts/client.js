@@ -1,3 +1,6 @@
+//set global variable for real estate type
+var realEstateType = "";
+
 $(document).ready(function(){
   console.log('jq sourced');
   getRealEstate();
@@ -28,6 +31,7 @@ function postRealEstate(data){
     data: data,
     success: function(response){
       console.log(response);
+      getRealEstate();
     }
   });
 }
@@ -47,7 +51,7 @@ function addEventListeners(){
   $('#addRealEstateModal').on('show.bs.modal', function(event) {
     var button = $(event.relatedTarget);
     console.log(button.data('realestatetype'));
-    var realEstateType = button.data('realestatetype');
+    realEstateType = button.data('realestatetype');
     var modal = $(this);
     console.log(realEstateType);
 
@@ -63,7 +67,25 @@ function addEventListeners(){
   //end modal display options
 
   $('.modal-content').on('click', '#submitProperty', function(){
-    console.log($('#addCity').val() + ' ' + $('#addSqFt').val() + ' ' + $('#addPrice').val());
+    console.log($('#addCity').val() + ' ' + $('#addSqFt').val() + ' ' + $('#addPrice').val() + ' ' + realEstateType);
+    var data = {};
+    data.city = $('#addCity').val();
+    data.sqft = $('#addSqFt').val();
+    data.price = $('#addPrice').val();
+    data.type = realEstateType;
+    realEstateType = "";
+    $('#addCity').val('');
+    $('#addSqFt').val('');
+    $('#addPrice').val('');
+    postRealEstate(data);
+  });
+
+  $('#toggleForSale').on('click', function(){
+    $('.forSaleProperties').toggleClass('hidden');
+  });
+
+  $('#toggleRentals').on('click', function(){
+    $('.forSaleProperties').toggleClass('hidden');
   });
 }
 //end event listeners
@@ -78,19 +100,19 @@ function appendForSale(forSale){
       $('.forSaleProperties').append(
       // $('#forSaleProperties').children().last().append(
         '<div class="col-md-3 col-sm-4 col-xs-6 properties">' +
-        '<p>' + dynamicDescription() + '</p>' +
+        '<p><b>' + dynamicDescription() + '</b></p>' +
           '<div class="panel-group">' +
             '<div class="panel panel-primary">' +
-              '<div class="panel-heading panel-heading-sm">Cost:</div>' +
-              '<div class="panel-body panel-body-sm">' + currentProp.cost + '</div>' +
+              '<div class="panel-heading panel-heading-sm">City:</div>' +
+              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-map-marker"></span>  ' + currentProp.city + '</div>' +
             '</div>' +
             '<div class="panel panel-success">' +
               '<div class="panel-heading panel-heading-sm">Size:</div>' +
-              '<div class="panel-body panel-body-sm">' + currentProp.sqft + ' SqFt</div>' +
+              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-info-sign"></span>  ' + currentProp.sqft + ' SqFt</div>' +
             '</div>' +
             '<div class="panel panel-info">' +
-              '<div class="panel-heading panel-heading-sm">City:</div>' +
-              '<div class="panel-body panel-body-sm">' + currentProp.city + '</div>' +
+              '<div class="panel-heading panel-heading-sm">Cost:</div>' +
+              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-usd"></span>  ' + currentProp.cost + '</div>' +
             '</div>' +
           '</div>' +
         '</div>');
@@ -115,16 +137,16 @@ function appendRentals(rentals){
           '<p>' + dynamicDescription() + '</p>' +
           '<div class="panel-group">' +
             '<div class="panel panel-primary">' +
-              '<div class="panel-heading panel-heading-sm">Rent:</div>' +
-              '<div class="panel-body panel-body-sm">' + currentProp.rent + '</div>' +
+              '<div class="panel-heading panel-heading-sm">City:</div>' +
+              '<div class="panel-body panel-body-sm">' + currentProp.city + '</div>' +
             '</div>' +
             '<div class="panel panel-success">' +
               '<div class="panel-heading panel-heading-sm">Size:</div>' +
               '<div class="panel-body panel-body-sm">' + currentProp.sqft + ' SqFt</div>' +
             '</div>' +
             '<div class="panel panel-info">' +
-              '<div class="panel-heading panel-heading-sm">City:</div>' +
-              '<div class="panel-body panel-body-sm">' + currentProp.city + '</div>' +
+              '<div class="panel-heading panel-heading-sm">Rent:</div>' +
+              '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-usd"></span>' + currentProp.rent + '</div>' +
             '</div>' +
           '</div>' +
         '</div>');

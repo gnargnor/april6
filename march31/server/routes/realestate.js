@@ -25,7 +25,6 @@ router.get('/get', function(req, res){
        console.log('error: ', err);
        res.sendStatus(500);
      }
-     console.log('database hit ', allListings);
      var rentals = [];
      var forSale = [];
      for (var i = 0; i < allListings.length; i++){
@@ -43,7 +42,23 @@ router.get('/get', function(req, res){
 });
 
 router.post('/post', function(req, res){
-  console.log('post realestate hit');
+  console.log('post realestate hit ', req.body);
+  var listing = new Listings();
+  listing.city = req.body.city;
+  listing.sqft = req.body.sqft;
+  if (listing.type === 'rental') {
+    listing.rent = req.body.price;
+  } else {
+    listing.cost = req.body.price;
+  }
+  console.log(listing);
+  listing.save(function(err, newProperty){
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }
+
+    });
   res.sendStatus(200);
 });
 

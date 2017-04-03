@@ -3,6 +3,7 @@ var app = express();
 var port = 5000 || process.env.PORT;
 var index = 'index.js';
 var realestate = require('./routes/realestate.js');
+var bodyParser = require('body-parser');
 
 var mongoose = require("mongoose");
 var mongoURI = "mongodb://localhost:27017/realestate";
@@ -20,6 +21,7 @@ MongoDB.once("open", function(){
 
 app.set('port', port);
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('server/public'));
 
 app.use('/realestate', realestate);
