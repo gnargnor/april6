@@ -25,6 +25,11 @@ h1 {
   /*top: 200px;*/
 }
 
+#typeOfRealEstate {
+  font-weight:bold;
+  font-size: 25px;
+}
+
 .properties {
 
   padding: 5px;

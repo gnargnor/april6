@@ -85,7 +85,7 @@ function addEventListeners(){
   });
 
   $('#toggleRentals').on('click', function(){
-    $('.forSaleProperties').toggleClass('hidden');
+    $('.rentalProperties').toggleClass('hidden');
   });
 }
 //end event listeners
@@ -115,6 +115,7 @@ function appendForSale(forSale){
               '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-usd"></span>  ' + currentProp.cost + '</div>' +
             '</div>' +
           '</div>' +
+          '<p class="text-center">LEARN MORE</p>' +
         '</div>');
 
     }
@@ -149,6 +150,7 @@ function appendRentals(rentals){
               '<div class="panel-body panel-body-sm"><span class="glyphicon glyphicon-usd"></span>' + currentProp.rent + '</div>' +
             '</div>' +
           '</div>' +
+          '<p class="text-center">LEARN MORE</p>' +
         '</div>');
 
     }
