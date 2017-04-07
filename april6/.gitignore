@@ -1,4 +1,4 @@
-server/public
-node_modules
+server/public/
+node_modules/
 .DS_Store
 npm-debug.log
