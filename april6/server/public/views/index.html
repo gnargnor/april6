@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Chi MEAN</title>
+
+    <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
+    <script type="text/javascript" src="scripts/client.min.js"></script>
+
+  </head>
+  <body>
+    <div class="container header">
+      <div class="col-md-2">
+      </div>
+      <div class ="col-md-4">
+      <h1>Movie Storage</h1>
+    </div>
+    <div class="col-md-6">
+    </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 inputDiv" ng-controller="InputController">
+
+          <form class="form-horizontal" id="addMovieForm" ng-submit="postMovie(movie)">
+
+            <div class="form-group">
+              <label for="title">Title:</label><br />
+              <input type="text" name="title" ng-model="movie.title">
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description:</label><br />
+              <textarea class="form-control" rows="5" name="description" ng-model="movie.description"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="director">Director:</label><br />
+              <input type="text" name="director" ng-model="movie.director">
+            </div>
+
+            <div class="form-group">
+              <label for="duration">Duration:</label><br />
+              <input type="text" name="duration" ng-model="movie.duration"><br /><br />
+            </div>
+
+            <div class="form-group">
+              <input type="submit" id="submit" value="Add to List" class="btn btn-primary btn-sm">
+            </div>
+
+          </form>
+
+        </div>
+        <div class="col-md-9 outputDiv" ng-controller="OutputController"><br />
+            <div class="container" ng-repeat="object in movieObject.movieList">
+              <div class="row newMovie">
+
+                  <!-- <dl class="dl-horizontal">
+                    <dt>{{object.title}}</dt>
+                    <dd>{{object.description}}</dd>
+                  </dl> -->
+                <h4>{{object.title}}</h4>
+                <p>{{object.description}}</p>
+                <div class="row dirDur">
+                  <div class="col-md-6">directed by: <b>{{object.director}}</b></div>
+                  <div class="col-md-6">run time: <b>{{object.duration}}</b></div>
+                </div>
+
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+    <script src="//localhost:35729/livereload.js"></script>
+  </body>
+</html>

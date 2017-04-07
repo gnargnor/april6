@@ -1,0 +1,36 @@
+textarea {
+  width: 152px
+
+}
+
+input {
+  left: 20px;
+}
+
+#addMovieForm {
+  padding: 10px;
+  margin: 5px;
+  background-color: lightblue;
+}
+
+.inputDiv {
+  background-color: beige;
+
+}
+.outputDiv {
+  background-color: beige;
+  /*text-align: center;*/
+
+}
+
+.dirDur {
+
+}
+
+.newMovie {
+  background-color: lightblue;
+  padding: 10px;
+  margin: 5px;
+  max-width: 800px;
+  border-radius: 4px;
+}
